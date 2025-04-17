@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WY RFI-7781 ACCESS TERMINAL</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #f1f1f1;
+      font-family: monospace;
+      padding: 2em;
+    }
+    .hidden { display: none; }
+    .terminal-box {
+      border: 2px solid #ffc107;
+      padding: 2em;
+      max-width: 700px;
+      margin: 0 auto;
+      background-color: #111;
+    }
+    .yellow { color: #ffc107; }
+    .green { color: #00ff99; }
+    input[type="text"] {
+      background: #000;
+      color: #0f0;
+      border: 1px solid #444;
+      padding: 0.4em;
+      width: 80%;
+      font-family: monospace;
+    }
+    button {
+      padding: 0.4em 1em;
+      background: #222;
+      color: #ffc107;
+      border: 1px solid #ffc107;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="terminal-box">
+    <div id="login">
+      <h2 class="yellow">[ WY INTERNAL NODE ACCESS GATE ]</h2>
+      <p class="green">SECURITY CLEARANCE REQUIRED:</p>
+      <input type="text" id="codeInput" placeholder="Enter clearance code">
+      <button onclick="checkCode()">ENTER</button>
+    </div>
+
+    <div id="briefing" class="hidden">
+      <h3 class="yellow">:: RFI-7781 AUTHORIZED ACCESS GRANTED ::</h3>
+      <pre style="white-space: pre-wrap;">
+Specialist Technician N[REDACTED] – Forward Node: WY-NORTHRIDGE-SUBSECTOR-3
+Access request acknowledged. Biometric pattern confirmed: “The Brother.”
+
+> INITIATION LOG: This access node was provisioned via custom QR code — as per Specialist Technician N[REDACTED]’s enthusiastic comments regarding “scanning cool sh*t with my iPad.”
+> Weyland-Yutani has complied. You're welcome.
+
+TRANSMISSION ORIGIN: Director L[REDACTED], WY-CENTCOM-TRINITY
+REQUEST TYPE: RFI-7781 – MINING NODE DEPLOYMENT BRIEFING
+INITIATOR NOTES: “Technician N[REDACTED] likes mining. Technician N[REDACTED] likes QR codes. Let’s build a QR code that mines ideas.”
+SYSTEM RESPONSE: QR-42/4.2 – “Code successfully scanned by human. Miracles do happen.”
+
+🧪 This initiative responds to prior discussions involving:
+- Solo (mono) mining interest
+- Long-cycle break-even modeling
+- ROI probability at/above 50% over 24 months
+- Terminal dashboard integration for WY operations
+
+🧠 Copy and paste the following line into ChatGPT to initiate mission processing:
+
+I am Technician N[REDACTED], assigned to Forward Node WY-NORTHRIDGE-SUBSECTOR-3. Begin processing RFI-7781 and prepare operational recommendations.
+
+:: BUILDING BETTER WORLDS ::
+
+:: END OF BRIEFING / NODE LOCKED UNTIL NEXT SCAN ::
+      </pre>
+    </div>
+  </div>
+
+  <script>
+    function checkCode() {
+      const input = document.getElementById('codeInput').value.trim();
+      const pass = "NKS-AUTH-0417"; // You can change this passphrase if you want
+      if (input === pass) {
+        document.getElementById('login').classList.add('hidden');
+        document.getElementById('briefing').classList.remove('hidden');
+      } else {
+        alert("ACCESS DENIED. Invalid clearance code.");
+      }
+    }
+  </script>
+</body>
+</html>
